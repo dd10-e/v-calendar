@@ -108,7 +108,13 @@ Use the `is24hr` prop to adjust the hour `select` element and default input form
 <guide-datepicker-24hr />
 
 ```html
-<v-date-picker v-model="date" mode="dateTime" is24hr>
+<v-date-picker v-model="date" mode="dateTime" is24hr :available-times="{
+    options24: [
+      { value: 0, label: '00' },
+      { value: 1, label: '01' },
+      { value: 2, label: '02' },
+    ]
+}">
   <template v-slot="{ inputValue, inputEvents }">
     <input
       class="px-2 py-1 border rounded focus:outline-none focus:border-blue-300"
